@@ -17,7 +17,7 @@ module Klout
   end
 
   class User
-    attr_accessor :kscore, :twitter_screen_name
+    attr_accessor :kscore, :twitter_screen_name, :twitter_id, :score
     def initialize(user)
       user.each {|name, value| send("#{name}=", value)}
     end
@@ -33,6 +33,16 @@ module Klout
     def score(usernames)
       options = {:users => usernames, :key => self.key}
       response = Request.get("http://api.klout.com/1/klout.json", :query => options)
+      if response.code == 200
+        Score.new(response)
+      else
+        raise "#{response.code} #{response.message}"
+      end
+    end
+
+    def show(usernames)
+      options = {:users => usernames, :key => self.key}
+      response = Request.get("http://api.klout.com/1/users/show.json", :query => options)
       if response.code == 200
         Score.new(response)
       else

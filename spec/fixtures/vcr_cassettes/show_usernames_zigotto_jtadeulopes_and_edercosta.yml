@@ -1,0 +1,28 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://api.klout.com:80/1/users/show.json?users=zigotto%2Cjtadeulopes%2Cedercosta&key=wtg33wk54s6hjppr7y9sderj
+    body: 
+    headers: 
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      x-mashery-responder: 
+      - mashery-web4.LAX
+      server: 
+      - nginx/0.7.67
+      date: 
+      - Wed, 27 Jul 2011 17:46:55 GMT
+      content-type: 
+      - application/json
+      x-powered-by: 
+      - PHP/5.3.3-1ubuntu9.5
+      accept-ranges: 
+      - bytes
+      content-length: 
+      - "2156"
+    body: "{\"status\":200,\"users\":[{\"twitter_id\":\"12825932\",\"twitter_screen_name\":\"jtadeulopes\",\"score\":{\"kscore\":32.91,\"slope\":-0.08,\"description\":\"is effectively using social media to influence their network across a variety of topics\",\"kclass_id\":4,\"kclass\":\"Explorer\",\"kclass_description\":\"You actively engage in the social web, constantly trying out new ways to interact and network. You're exploring the ecosystem and making it work for you. Your level of activity and engagement shows that you \\\"get it\\\", we predict you'll be moving up.\",\"kscore_description\":\"is effectively using social media to influence their network across a variety of topics\",\"network_score\":33.69,\"amplification_score\":15.86,\"true_reach\":206,\"delta_1day\":-1.43,\"delta_5day\":-3.78}},{\"twitter_id\":\"18770991\",\"twitter_screen_name\":\"zigotto\",\"score\":{\"kscore\":25.98,\"slope\":-0.11,\"description\":\"is influential to a tightly formed network that is growing larger\",\"kclass_id\":4,\"kclass\":\"Explorer\",\"kclass_description\":\"You actively engage in the social web, constantly trying out new ways to interact and network. You're exploring the ecosystem and making it work for you. Your level of activity and engagement shows that you \\\"get it\\\", we predict you'll be moving up.\",\"kscore_description\":\"is influential to a tightly formed network that is growing larger\",\"network_score\":36.97,\"amplification_score\":12.71,\"true_reach\":80,\"delta_1day\":0.07,\"delta_5day\":-0.07}},{\"twitter_id\":\"17993732\",\"twitter_screen_name\":\"edercosta\",\"score\":{\"kscore\":38.76,\"slope\":0.26,\"description\":\"is effectively using social media to influence their network across a variety of topics\",\"kclass_id\":4,\"kclass\":\"Explorer\",\"kclass_description\":\"You actively engage in the social web, constantly trying out new ways to interact and network. You're exploring the ecosystem and making it work for you. Your level of activity and engagement shows that you \\\"get it\\\", we predict you'll be moving up.\",\"kscore_description\":\"is effectively using social media to influence their network across a variety of topics\",\"network_score\":44.72,\"amplification_score\":17.1,\"true_reach\":202,\"delta_1day\":-0.01,\"delta_5day\":0.04}}]}"
+    http_version: "1.1"
