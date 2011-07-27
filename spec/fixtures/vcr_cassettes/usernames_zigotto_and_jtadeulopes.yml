@@ -1,0 +1,28 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://api.klout.com:80/1/klout.json?users=zigotto%2Cjtadeulopes&key=wtg33wk54s6hjppr7y9sderj
+    body: 
+    headers: 
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      x-mashery-responder: 
+      - mashery-web6.LAX
+      server: 
+      - nginx/0.7.67
+      date: 
+      - Wed, 27 Jul 2011 14:28:45 GMT
+      content-type: 
+      - application/json
+      x-powered-by: 
+      - PHP/5.3.3-1ubuntu9.5
+      accept-ranges: 
+      - bytes
+      content-length: 
+      - "126"
+    body: "{\"status\":200,\"users\":[{\"twitter_screen_name\":\"jtadeulopes\",\"kscore\":32.91},{\"twitter_screen_name\":\"zigotto\",\"kscore\":25.98}]}"
+    http_version: "1.1"
