@@ -48,7 +48,59 @@ describe Klout do
   describe Klout::User do
 
     describe "#topics" do
-      pending
+
+      context "provides topics about username" do
+
+        use_vcr_cassette "topics_BarackObama"
+
+        let(:topics) do
+          @klout.topics("BarackObama")
+        end
+
+        it { topics.users.should have(1).users }
+
+        let(:user) do
+          topics.users.first
+        end
+
+        it { user.twitter_screen_name.should == "BarackObama" }
+        it { user.topics.should have(5).items }
+        it { user.topics.should == %w(celebrities media business government hollywood) }
+
+      end
+
+      context "provides topics to many users" do
+
+        use_vcr_cassette "topics_BarackObama_and_jtadeulopes"
+
+        let(:topics) do
+          @klout.topics("BarackObama,jtadeulopes")
+        end
+
+        it { topics.users.should have(2).users }
+
+        %w(BarackObama jtadeulopes).each do |username|
+          it { topics.users.map(&:twitter_screen_name).include?(username).should be_true }
+        end
+
+        let(:jtadeulopes) do
+          topics.users.last
+        end
+
+        it { jtadeulopes.twitter_screen_name.should == "jtadeulopes" }
+        it { jtadeulopes.topics.should have(1).items }
+        it { jtadeulopes.topics.should == %w(development) }
+
+        let(:barack_obama) do
+          topics.users.first
+        end
+
+        it { barack_obama.twitter_screen_name.should == "BarackObama" }
+        it { barack_obama.topics.should have(5).items }
+        it { barack_obama.topics.should == %w(celebrities media business government hollywood) }
+
+      end
+
     end
 
     describe "#show" do

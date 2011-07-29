@@ -1,0 +1,30 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://api.klout.com:80/1/users/topics.json?users=BarackObama%2Cjtadeulopes&key=wtg33wk54s6hjppr7y9sderj
+    body: 
+    headers: 
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      connection: 
+      - keep-alive
+      x-mashery-responder: 
+      - mashery-web5.LAX
+      server: 
+      - nginx/0.7.67
+      date: 
+      - Fri, 29 Jul 2011 02:50:11 GMT
+      content-type: 
+      - application/json
+      x-powered-by: 
+      - PHP/5.3.3-1ubuntu9.5
+      accept-ranges: 
+      - bytes
+      content-length: 
+      - "194"
+    body: "{\"status\":200,\"users\":[{\"twitter_screen_name\":\"BarackObama\",\"topics\":[\"celebrities\",\"media\",\"business\",\"government\",\"hollywood\"]},{\"twitter_screen_name\":\"jtadeulopes\",\"topics\":[\"development\"]}]}"
+    http_version: "1.1"
