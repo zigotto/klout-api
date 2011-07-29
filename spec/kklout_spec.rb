@@ -49,6 +49,11 @@ describe Klout do
 
     describe "#topics" do
 
+      context "when invalid username" do
+        use_vcr_cassette "topics_invalid_username"
+        it { expect { @klout.topics("alsdkfjlaskdfjlak") }.to raise_error(/404 Not Found/) }
+      end
+
       context "provides topics about username" do
 
         use_vcr_cassette "topics_BarackObama"
@@ -104,6 +109,11 @@ describe Klout do
     end
 
     describe "#show" do
+
+      context "when invalid username" do
+        use_vcr_cassette "show_invalid_username"
+        it { expect { @klout.show("alsdkfjlaskdfjlak") }.to raise_error(/404 Not Found/) }
+      end
 
       context "provides information to many users" do
 
