@@ -14,11 +14,11 @@ require 'rake'
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
-  gem.name = "kklout"
-  gem.homepage = "http://github.com/zigotto/kklout"
+  gem.name = "klout-api"
+  gem.homepage = "http://github.com/zigotto/klout-api"
   gem.license = "MIT"
-  gem.summary = %Q{Library to access Twitter Counter API}
-  gem.description = %Q{Library to access Twitter Counter API}
+  gem.summary = %Q{Library to access Klout API}
+  gem.description = %Q{Library to access Klout API}
   gem.email = "jlopes@zigotto.com.br"
   gem.authors = ["Jesus Lopes"]
   # dependencies defined in Gemfile
@@ -43,7 +43,7 @@ Rake::RDocTask.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
 
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "kklout #{version}"
+  rdoc.title = "klout-api #{version}"
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
